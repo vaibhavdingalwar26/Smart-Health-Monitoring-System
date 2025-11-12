@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Smart Health Monitoring System</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Chart.js for live graphs -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- jsPDF + autoTable for report -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.0/jspdf.plugin.autotable.min.js"></script>
+</head>
+
+<body>
+  <header>
+    <h1>Smart Health Monitoring System</h1>
+    <p class="subtitle">Live Monitoring • AI Prediction • Report Generation</p>
+  </header>
+
+  <main class="container">
+    <div class="cards">
+      <div class="card">
+        <p class="label">SpO₂</p>
+        <p class="value" id="val-spo2">-- %</p>
+      </div>
+      <div class="card">
+        <p class="label">Heart Rate</p>
+        <p class="value" id="val-hr">-- bpm</p>
+      </div>
+      <div class="card">
+        <p class="label">Temperature</p>
+        <p class="value" id="val-temp">-- °C</p>
+      </div>
+    </div>
+
+    <div id="status" class="status warn">Waiting for live data...</div>
+
+    <section class="ai-section">
+      <h2>AI Health Prediction</h2>
+      <p id="prediction">--</p>
+      <p id="recommendation">--</p>
+    </section>
+
+    <button id="download-btn">📄 Download Health Report</button>
+
+    <div class="charts">
+      <div class="chart-box">
+        <h3>SpO₂ Trend</h3>
+        <canvas id="chart-spo2"></canvas>
+      </div>
+      <div class="chart-box">
+        <h3>Heart Rate Trend</h3>
+        <canvas id="chart-hr"></canvas>
+      </div>
+      <div class="chart-box">
+        <h3>Temperature Trend</h3>
+        <canvas id="chart-temp"></canvas>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Smart Health Monitoring System</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
